@@ -1,21 +1,22 @@
-var penumpang = [];
+var penumpang = ['dias', undefined, 'ratim'];
 var tbhPenumpang = function(nmPenumpang, penumpang) {
-    if ( penumpang.lenght == 0) { // jika angkot kosong
-        penumpang.push(nmPenumpang);//tambah penumpang di awal array
-        return penumpang;//kembalikan isi array & keluar dari function
-    } else { //else
-        for ( var i = 0; i < penumpang.lenght; i++) { //telusuri seluruh kursi dari awal
-            if (penumpang[i] == undefined) { //jika ada kursi kosong
-             penumpang[i] = nmPenumpang; //tambah penumpang di kursi tersebut
-             return penumpang;   //kembalikan isi array & keluar dari function
+    if ( penumpang.length == 0) {                       
+        penumpang.push(nmPenumpang);                    
+        return penumpang;                               
+    } else {                                            
+        for ( var i = 0; i < penumpang.length; i++ ) {
+            if (penumpang[i] == undefined) {            
+                penumpang[i] = nmPenumpang;                
+                return penumpang;                          
             };
-            else if ( )
-                //jika sudah ada nama yang sama
-                //tampilkan pesan kesalahannya
-                //kembalikan isi array & keluar dari function
-            //jika seluruh kursi terisi
-                //tambah penumpang di akhir array
-                //kemblikan isi array & keluar dari function
+            else if (penumpang[i] == nmPenumpang) {  
+                console.log(nmPenumpang + ' sudah ada di dalam angkot') 
+                return penumpang; 
+            };
+            else if ( i == penumpang.length - 1){     
+                penumpang.push(nmPenumpang);            
+                return penumpang;                       
+            };
         };    
-      };
+    };
 };
