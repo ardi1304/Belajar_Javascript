@@ -61,9 +61,44 @@ var angka = [1,2,3,4,5,6,7,8];
 // }
 angka.forEach(function(e) {
     console.log(e);
+});
+
+namaMhs.forEach(function(e, i) {
+    console.log('Mahasiswa ke-' + (i+1) + ' adalah : ' +e);
 })
 
-namaMhs.forEach(function(e) {
-    console.log(e);
-})
 
+// 9. Map
+var angka2 = angka.map(function(e) {
+    return e * 5;
+});
+console.log(angka2.join(' ~ '));
+
+// 10.Sort
+var angkaAcak = [3, 7, 4, 9, 8, 1, 5, 2, 6];
+console.log('Angka yang belum diurutkan ' + angkaAcak.join(' ~ ')); //array sebelum di sort
+
+angkaAcak.sort();
+console.log('Angka yang sudah di urutkan ' + angkaAcak.join( ' ~ '));
+
+var angkaAcak2 = [9, 3, 7,10, 20, 5, 2, 1]; 
+angkaAcak2.sort();
+console.log(angkaAcak2.join(' ~ ') + ' ini terjadi karna array mengurutkan angka depannya dahulu');
+
+angkaAcak2.sort(function(a,b) {
+    return a-b;
+});
+console.log(angkaAcak2.join(' ~ ') + ' Hal ini dapat dilakukan dengan penambahan function');
+
+
+// 11. filter = berfungsi untuk mencari nilai array dan mengembalikannya dalam bentuk array(banyak element array)
+// 12. sedangkan find hanya mencari satu angka yang pertama kali di temukan dalm array
+var filterAngkaAcak = angkaAcak.filter(function(e) {
+    return e > 5;
+});
+console.log(filterAngkaAcak.join( '~'));
+
+var filterAngkaAcak2 = angkaAcak2.find(function(e) {
+    return e > 10;
+});
+console.log(filterAngkaAcak2);
